@@ -5,7 +5,7 @@
   // set the attributes for link element
   link.rel = 'stylesheet';
   link.type = 'text/css';
-  link.href = '/style.css';
+  link.href = 'https://cdn.jsdelivr.net/gh/ulixtech/Ulix_ShareButton@main/style.css';
   // Append link element to HTML head
   shrbtnheader.appendChild(link);
 
