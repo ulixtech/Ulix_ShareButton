@@ -13,11 +13,11 @@
 let content_url = window.document.URL;
 let content_title = document.title;
 
-let fb_icon_bgcolor ="#3b5998";
-let wp_icon_bgcolor ="#43d854";
-let tg_icon_bgcolor ="#00405d";
+let fb_icon_bgcolor ="rgb(248 74 88)";
+let wp_icon_bgcolor ="rgb(248 74 88)";
+let tg_icon_bgcolor ="rgb(248 74 88)";
 
-let nxt_btn_bgcolor ="#00405d";
+let nxt_btn_bgcolor ="rgb(248 74 88)";
 
 let fb_icon = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyBmaWxsPSIjRkZGRkZGIiB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMjEuOTUgNS4wMDVsLTMuMzA2LS4wMDRjLTMuMjA2IDAtNS4yNzcgMi4xMjQtNS4yNzcgNS40MTV2Mi40OTVIMTAuMDV2NC41MTVoMy4zMTdsLS4wMDQgOS41NzVoNC42NDFsLjAwNC05LjU3NWgzLjgwNmwtLjAwMy00LjUxNGgtMy44MDN2LTIuMTE3YzAtMS4wMTguMjQxLTEuNTMzIDEuNTY2LTEuNTMzbDIuMzY2LS4wMDEuMDEtNC4yNTZ6Ii8+PC9zdmc+";
 
@@ -90,31 +90,31 @@ nxtbtnlink.href ="#";
 nxtbtnlink.classList.add("nav__link");
 nxtbtnlink.style.fontSize = "18px";
 nxtbtnlink.style.textTransform = "uppercase";
-nxtbtnlink.style.backgroundColor = "red";
+nxtbtnlink.style.backgroundColor = nxt_btn_bgcolor;
 Shrbtn.appendChild(nxtbtnlink);
 //next buton 
 let buttonnxt = document.createElement("span");
 
 buttonnxt.classList.add("nav__text");
 nxtbtnlink.appendChild(buttonnxt);
-buttonnxt.innerHTML="Share ➤";
+buttonnxt.innerHTML="Share »";
 
-const shareBtn = document.getElementById('nav__text');
 
-if (navigator.share) {
-  shareBtn.addEventListener('click', async () => {
-    try {
-      await navigator.share({
-        title: content_title,
-        text: content_title,
-        url: content_url,
-      });
-      console.log('Shared successfully');
-    } catch (err) {
-      console.error('Error sharing:', err);
+  const btn = document.querySelector('.nav__text');
+  const shareData = {
+    title: content_title,
+    text: '',
+    url: content_url
+  }
+
+  // Share must be triggered by "user activation"
+  btn.addEventListener('click', async () => {
+		   try {
+      await navigator.share(shareData)
+    } 
+    catch(err) {
+		navigator.clipboard.writeText(shareData.url);
+      console.log("Share Not Shared");
     }
+	
   });
-} else {
-  console.warn('Web Share API not supported');
-}
-
