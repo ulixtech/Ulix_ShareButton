@@ -62,9 +62,11 @@ Shrbtn.appendChild(telegrambtn);
 
 
 //sharebuttonlink
-fbShrbtn.href = "https://www.facebook.com/sharer/sharer.php?u="+content_url+"utm_source=fb_share"+"&quote="+content_title;
-wpSharebtn.href = "whatsapp://send/?text="+content_title+" - "+content_url+"utm_source=whatsapp_share";
-telegrambtn.href = "https://telegram.me/share/url?url="+content_url+"utm_source=telegram_share"+"&text="+content_title;
+fbShrbtn.href = "https://www.facebook.com/sharer/sharer.php?u="+content_url+"utm_source=fb_share"+"&quote="+content_title; 
+ wpSharebtn.href = "whatsapp://send/?text="+content_title+" - "+content_url+"utm_source=whatsapp_share"; 
+ telegrambtn.href = "https://telegram.me/share/url?url="+content_url+"utm_source=telegram_share"+"&text="+content_title; 
+  
+ 
 
 
 //imageintobtn
