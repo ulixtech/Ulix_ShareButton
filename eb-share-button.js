@@ -10,7 +10,7 @@
   shrbtnheader.appendChild(link);
 
 
-let content_url = window.document.URL+'?utm_medium=ulx_share&';
+let content_url = window.document.URL+'?utm_source=ulx_share_button&utm_medium=ulx_share';
 let content_title = document.title;
 
 let fb_icon_bgcolor ="#3b5998";
