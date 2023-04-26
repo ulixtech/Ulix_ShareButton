@@ -1,13 +1,13 @@
-  // Get HTML head element
-  let shrbtnheader = document.getElementsByTagName('HEAD')[0];
-  // Create new link Element
-  var link = document.createElement('link');
-  // set the attributes for link element
-  link.rel = 'stylesheet';
-  link.type = 'text/css';
-  link.href = 'https://cdn.jsdelivr.net/gh/ulixtech/Ulix_ShareButton@main/style.css';
-  // Append link element to HTML head
-  shrbtnheader.appendChild(link);
+// Get HTML head element
+let shrbtnheader = document.getElementsByTagName('HEAD')[0];
+// Create new link Element
+var link = document.createElement('link');
+// set the attributes for link element
+link.rel = 'stylesheet';
+link.type = 'text/css';
+link.href = 'https://cdn.jsdelivr.net/gh/ulixtech/Ulix_ShareButton@main/style.css';
+// Append link element to HTML head
+shrbtnheader.appendChild(link);
 
 
 let content_url = window.document.URL+'?utm_source=ulx_share_button&utm_medium=ulx_share';
@@ -71,16 +71,19 @@ fbShrbtn.href = "https://www.facebook.com/sharer/sharer.php?u="+content_url+"&
 
 //imageintobtn
 let fb_icon_svg = document.createElement("img");
+fb_icon_svg.alt = "fb Share";
 fb_icon_svg.src = fb_icon;
 fb_icon_svg.style.width ="28px";
 fbShrbtn.appendChild(fb_icon_svg);
 
 let wp_icon_svg = document.createElement("img");
+wp_icon_svg.alt = "Whatsapp Share";
 wp_icon_svg.src = wp_icon;
 wp_icon_svg.style.width ="28px";
 wpSharebtn.appendChild(wp_icon_svg);
 
 let tg_icon_svg = document.createElement("img");
+tg_icon_svg.alt = "Telegram Share";
 tg_icon_svg.src = tg_icon;
 tg_icon_svg.style.width ="28px";
 telegrambtn.appendChild(tg_icon_svg);
